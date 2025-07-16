@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,8 +22,12 @@ const Index = () => {
             <a href="#faq" className="text-gray-600 hover:text-primary transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" className="text-gray-600">Войти</Button>
-            <Button className="bg-primary hover:bg-primary/90">Регистрация</Button>
+            <Link to="/login">
+              <Button variant="ghost" className="text-gray-600">Войти</Button>
+            </Link>
+            <Link to="/register">
+              <Button className="bg-primary hover:bg-primary/90">Регистрация</Button>
+            </Link>
           </div>
         </div>
       </header>
@@ -40,14 +45,18 @@ const Index = () => {
               Отправляйте посылки с путешественниками в любую точку мира.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 py-4 text-lg">
-                <Icon name="Send" size={20} className="mr-2" />
-                Отправить посылку
-              </Button>
-              <Button size="lg" variant="outline" className="px-8 py-4 text-lg">
-                <Icon name="Plane" size={20} className="mr-2" />
-                Стать попутчиком
-              </Button>
+              <Link to="/register">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 px-8 py-4 text-lg">
+                  <Icon name="Send" size={20} className="mr-2" />
+                  Отправить посылку
+                </Button>
+              </Link>
+              <Link to="/register">
+                <Button size="lg" variant="outline" className="px-8 py-4 text-lg">
+                  <Icon name="Plane" size={20} className="mr-2" />
+                  Стать попутчиком
+                </Button>
+              </Link>
             </div>
             
             {/* Quick Stats */}
